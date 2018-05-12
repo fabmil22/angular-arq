@@ -1,3 +1,22 @@
-<p>
-  form1 works!
-</p>
+
+<div class="container">
+  <form [formGroup]="form"   novalidate (ngSubmit)="onSubmit()">
+    <div class="form-group row">
+      <label for="inputName" class="col-sm-12 col-form-label">nombre</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" name="inputName" id="inputName" placeholder="">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputName" class="col-sm-12 col-form-label">dni</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" name="inputName" id="inputName" placeholder="">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="offset-sm-2 col-sm-10">
+        <button type="submit" class="btn btn-primary"  [disabled]="form.invalid || form.prestine" >Action</button>
+      </div>
+    </div>
+  </form>
+</div>
