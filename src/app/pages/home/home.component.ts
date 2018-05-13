@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+
+  nombre: string;
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.nombre = localStorage.getItem('nombre');
   }
+
+  save(){
+    localStorage.setItem('nombre', this.nombre);
+    console.log('aqui esta' , this.nombre);
+    this.router.navigate(['dashboard']);
+  }
+
 
 }

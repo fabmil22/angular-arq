@@ -2,9 +2,13 @@
 <div class="container">
 
 <div class="row">
-  <div class="col-5"><app-form1></app-form1></div>
-  <div class="col-1"></div>
-  <div class="col-5"><app-form2></app-form2></div>
+ 
+  <div class="form-group">
+    <label for="">nombre</label>
+    <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="nombre" aria-describedby="helpId" placeholder="escriba su nombre">
+    <small id="helpId" class="form-text text-muted">Help text</small>
+  </div>
+<button type="button"  class="btn btn-success btn-lg btn-block"  (click)="save()"> save</button>
 </div>
 
 </div>
